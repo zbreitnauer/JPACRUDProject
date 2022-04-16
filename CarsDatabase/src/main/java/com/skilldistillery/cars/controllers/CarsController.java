@@ -14,7 +14,7 @@ public class CarsController {
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
-		model.addAttribute("DEBUG", dao.findById(1));
+		model.addAttribute("DEBUG", dao.findById(2));
 		return "home";
 	}
 
