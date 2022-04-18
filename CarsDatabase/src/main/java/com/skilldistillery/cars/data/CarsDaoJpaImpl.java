@@ -53,7 +53,7 @@ public class CarsDaoJpaImpl implements CarsDAO {
 		car.setMake(cars.getMake());
 		car.setModel(cars.getModel());
 		car.setEngine(cars.getEngine());
-		car.setTransmission(cars.getEngine());
+		car.setTransmission(cars.getTransmission());
 		car.setDrivetrain(cars.getDrivetrain());
 		car.setForceInduction(cars.getForceInduction());
 		car.setMpg(cars.getMpg());
