@@ -9,10 +9,11 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.cars.entities.Cars;
+
 @Transactional
 @Service
 public class CarsDaoJpaImpl implements CarsDAO {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -23,7 +24,7 @@ public class CarsDaoJpaImpl implements CarsDAO {
 
 	@Override
 	public List<Cars> findAll() {
-		String jpql = "SELECT c FROM cars c";
+		String jpql = "select c from Cars c";
 		return em.createQuery(jpql, Cars.class).getResultList();
 	}
 
@@ -38,11 +39,11 @@ public class CarsDaoJpaImpl implements CarsDAO {
 	public boolean deleteCars(int id) {
 		Cars cars = em.find(Cars.class, id);
 		boolean removedCars = false;
-		if(cars != null) {
+		if (cars != null) {
 			em.remove(cars);
 			removedCars = !em.contains(cars);
 		}
-			return removedCars;
+		return removedCars;
 	}
 
 	@Override
@@ -56,16 +57,20 @@ public class CarsDaoJpaImpl implements CarsDAO {
 		car.setDrivetrain(cars.getDrivetrain());
 		car.setForceInduction(cars.getForceInduction());
 		car.setMpg(cars.getMpg());
-		
+		car.setPhoto(cars.getPhoto());
+
 		em.flush();
-		
-		
+
 		return car;
 	}
 
-	@Override
-	public Cars findByName(String model) {
-		return em.find(Cars.class, model);
-	}
-
+//	@Override
+//	public List<Cars> findByName(Cars model) {
+//		String jpql = "select c from Cars c where c.model :keyword";
+//		List<Cars> cars = em.createQuery(jpql, Cars.class)
+//				.setParameter("keyword",  ("%" + model + "%"))
+//				.getResultList();
+//		return cars;
+//	}
+	
 }

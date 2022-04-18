@@ -20,6 +20,7 @@ public class Cars {
 	@Column(name = "force_induction")
 	private String forceInduction;
 	private Integer mpg;
+	private String photo;
 
 	public Cars() {
 	}
@@ -95,12 +96,19 @@ public class Cars {
 	public void setMpg(Integer mpg) {
 		this.mpg = mpg;
 	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 	@Override
 	public String toString() {
-		return "Cars [id=" + id + ", year=" + year + ", make=" + make + ", model=" + model + ", engine=" + engine
-				+ ", transmission=" + transmission + ", drivetrain=" + drivetrain + ", forceInduction=" + forceInduction
-				+ ", mpg=" + mpg + "]";
+		return "Id: " + id +"\n" + "Year: " + year +"\n" + "Make: " + make +"\n" + "Model: " + model +"\n" + "Engine: " + engine
+				+"\n" + "Transmission: " + transmission +"\n" + "Drivetrain: " + drivetrain +"\n" + "Force Induction: " + forceInduction
+				+"\n" + "Mpg: " + mpg +"\n" + "Photo: " + photo;
 	}
-
 }

@@ -9,7 +9,28 @@
 </head>
 <body>
 	<h1>Welcome to Cars Database</h1>
-
-	${DEBUG} 
+	
+	<p>Find a car by id.</p>
+	<form action="getCars.do" method = "GET">
+	<input type = "text" name = "id"/>
+	<input type = "submit" value = "Submit"> 
+	</form>
+	
+	<!-- <p>Find a car by model.</p>
+	<form action="carsbymodel.do" method = "GET">
+	<input type = "text" name = "model"/>
+	<input type = "submit" value = "Submit"> 
+	</form> -->
+	
+	<p>Add a car.</p>
+	<form action="createCarsForm.do" method="POST">
+	<input type="submit" value="Submit"/>
+	</form>
+	
+	<p>Show Inventory.</p>
+	<form action="getAllCars.do" method="GET">
+	<input type="submit" value ="Submit"/>
+		</form>
+	
 </body>
 </html>

@@ -16,5 +16,5 @@ public interface CarsDAO {
 	
 	public Cars updateCars(int id, Cars cars);
 	
-	public Cars findByName(String model);
+//	public List<Cars> findByName(Cars model);
 }
